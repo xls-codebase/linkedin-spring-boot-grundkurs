@@ -167,6 +167,10 @@ Temporary Items
 hs_err_pid*
 replay_pid*
 
+
+bin
+build
+
 ### Gradle ###
 .gradle
 **/build/
