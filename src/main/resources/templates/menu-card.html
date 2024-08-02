@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Freddy´s BBW Joint</title>
+    <link th:href="@{styles.css}" rel="stylesheet" type="text/css" media="all"/>
+</head>
+<body>
+<h1>Welcome to Freddy´s BBQ Joint<span class="right fas fa-bacon"></span></h1>
+<div class="menu-card">
+    <div class="row">
+        <div><h2>Our Menu</h2></div>
+        <div><a th:href="@{/orders}" class="button"><span class="left fas fa-cart-shopping"></span>Order now!</a></div>
+    </div>
+    <div>
+        <ul th:each="menuItem : ${menuItems}" class="menu-items">
+            <li class="menu-item"><span
+                    th:class="'left fas ' + ${menuItem.drink ? 'drink fa-glass-whiskey' : 'food fa-utensils'}"></span>[[${menuItem.name}]]
+            </li>
+        </ul>
+    </div>
+</div>
+<script th:src="@{https://kit.fontawesome.com/fb1e6c57aa.js}" crossorigin="anonymous"></script>
+</body>
+</html>

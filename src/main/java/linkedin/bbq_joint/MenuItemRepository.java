@@ -20,7 +20,7 @@ public class MenuItemRepository {
         return Optional.ofNullable(menuItems.get(id));
     }
 
-    MenuItem save(MenuItem menuItem) {
+    public MenuItem save(MenuItem menuItem) {
         if (menuItem.getId() == null) {
             menuItem.setId(UUID.randomUUID());
         }

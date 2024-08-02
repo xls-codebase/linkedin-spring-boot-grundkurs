@@ -1,0 +1,12 @@
+body { font-family: Myriad, sans-serif; }
+h1 { color: green; text-align: center; margin: 1em 0; }
+span.fas.left {padding: 0 1em 0 0; }
+span.fas.right {padding: 0 0 0 0.25em; }
+.food { color: darkred; }
+.drink {color: cadetblue;}
+.button { background-color: lightskyblue; color: white; display:inline-block; padding: 1em; border-radius: 0.2em;}
+
+.menu-card { width: 70%; margin: 0 auto; }
+.menu-items { list-style-type:none; margin: 0; padding: 0;}
+.menu-item { border: 1px solid lightgrey; border-radius: 0.75em; padding: 1em;  margin: 0.5em 0; box-sizing: border-box;}
+.row { display:flex;  flex-direction: row; justify-content: space-between; align-items: center}
