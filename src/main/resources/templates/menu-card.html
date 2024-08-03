@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Freddy´s BBW Joint</title>
+    <title th:text="'Freddy´s BBW Joint' + (${pageTitle} ? ' - ' + ${pageTitle} : '')"/>
     <link th:href="@{styles.css}" rel="stylesheet" type="text/css" media="all"/>
 </head>
 <body>

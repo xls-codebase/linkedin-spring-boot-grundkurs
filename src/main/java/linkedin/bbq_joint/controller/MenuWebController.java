@@ -5,10 +5,8 @@ import linkedin.bbq_joint.MenuItemRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("menu-items")
 public class MenuWebController {
 
     private final MenuItemRepository menuItemRepository;
@@ -17,9 +15,10 @@ public class MenuWebController {
         this.menuItemRepository = menuItemRepository;
     }
 
-    @GetMapping
+    @GetMapping("/")
     public String index(Model model) {
         Iterable<MenuItem> menuItems = menuItemRepository.findByOrderByDrinkDescNameDesc();
+        model.addAttribute("pageTitle", "Menu");
         model.addAttribute("menuItems", menuItems);
         return "menu-card";
     }
