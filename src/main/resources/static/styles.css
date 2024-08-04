@@ -1,12 +1,24 @@
 body { font-family: Myriad, sans-serif; }
 h1 { color: green; text-align: center; margin: 1em 0; }
-span.fas.left {padding: 0 1em 0 0; }
+span.fas.left {padding: 0 0.5em 0 0; }
 span.fas.right {padding: 0 0 0 0.25em; }
 .food { color: darkred; }
 .drink {color: cadetblue;}
-.button { background-color: lightskyblue; color: white; display:inline-block; padding: 1em; border-radius: 0.2em;}
-
-.menu-card { width: 70%; margin: 0 auto; }
+.button { background-color: lightskyblue; color: white; text-decoration:none; display:inline-block; padding: 0.5em 1em; border-radius: 0.2em; }
+.wrapper { width: 70%; margin: 0 auto; }
 .menu-items { list-style-type:none; margin: 0; padding: 0;}
 .menu-item { border: 1px solid lightgrey; border-radius: 0.75em; padding: 1em;  margin: 0.5em 0; box-sizing: border-box;}
 .row { display:flex;  flex-direction: row; justify-content: space-between; align-items: center}
+.order-form .row { display:flex;  flex-direction: row; justify-content: flex-start; align-items: center; column-gap: 1em; }
+.order-form label {display:block;}
+.order-form form > div { margin-bottom: 1em;}
+.order-form h2, .order-form label {margin-bottom: 0.2em;}
+.order-form input, .order-form select { display: block; width: 100%; padding: 0.5em; box-sizing: border-box; border: 1px solid lightgrey; border-radius: 0.2em; }
+.order-form button[type=submit] { background-color: lightskyblue; }
+.order-form button[type=reset] { background-color: lightgrey; }
+.order-form button[type=submit], .order-form button[type=reset] { color: white; display:inline-block; padding: 0.5em 1em; border-radius: 0.2em; border: none; box-shadow: none; }
+.order-summary { background: #cbe2d9; padding: 1em; border-radius: 0.5em; border: 1px solid lightgrey; box-sizing: border-box; }
+.order-summary .message { color: green; }
+.order-summary .listing-intro { margin-bottom:0; padding-bottom:0; }
+.order-summary ul { margin-top:0; }
+.order-summary .button { background-color: grey; }

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:include="_fragments :: head-content"></head>
+<body>
+<h1 th:replace="_fragments :: headline"></h1>
+<div class="wrapper order-form">
+    <h2>Your Order</h2>
+    <form th:action="@{/orders/place}" method="post">
+        <div>
+            <input type="text" name="name" id="name"/>
+        </div>
+        <div>
+            <label for="drink">You Drink</label>
+            <select name="drink" id="drink">
+                <option value="" th:disabled="disabled" th:selected="selected">- Have a drink! -</option>
+                <option th:each="drinkItem : ${drinkItems}"
+                        th:value="${drinkItem.id}"
+                        th:text="${drinkItem.name}">
+            </select>
+
+        </div>
+        <div>
+            <label for="food">You Eat</label>
+            <select name="food" id="food">
+                <option value="" th:disabled="disabled" th:selected="selected">- Select a treat -</option>
+                <option th:each="foodItem : ${foodItems}"
+                        th:value="${foodItem.id}"
+                        th:text="${foodItem.name}">
+            </select>
+        </div>
+        <div class="row">
+            <div class="cancel">
+                <button type="reset"/>
+                <span class="left fas fa-close"></span>Cancel
+            </div>
+            <div class="submit">
+                <button type="submit"/>
+                <span class="left fas fa-paper-plane"></span>Place it
+            </div>
+        </div>
+    </form>
+</div>
+<script th:replace="_fragments :: scripts"/>
+</body>
+</html>

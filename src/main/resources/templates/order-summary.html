@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:include="_fragments :: head-content"></head>
+<body>
+<h1 th:replace="_fragments :: headline"></h1>
+<div class="wrapper order-summary">
+    <p class="message"><span class="left fas fa-clipboard-check"></span>We got your order
+        <th:block th:if="${!name.isEmpty()}">, <b>[[${name}]]</b></th:block>
+        !
+    </p>
+    <p class="listing-intro">You´re getting:</p>
+    <ul>
+        <li th:each="menuItem : ${menuItems}" th:text="${menuItem}"/>
+    </ul>
+    <p>That makes: <b>[[${total}]] $</b></p>
+    <div><a th:href="@{/}" class="button"><span class="left fas fa-caret-left"></span>Back</a></div>
+</div>
+<script th:replace="_fragments :: scripts"/>
+</body>
+</html>

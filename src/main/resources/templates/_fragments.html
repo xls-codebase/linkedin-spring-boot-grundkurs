@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf Fragments for Freddy´s BBW Joint</title>
+</head>
+<body>
+
+<!-- Head content like title, css, ... -->
+<th:block th:fragment="head-content">
+    <meta charset="UTF-8">
+    <title th:text="'Freddy´s BBW Joint' + (${pageTitle} ? ' - ' + ${pageTitle} : '')"></title>
+    <link th:href="@{/styles.css}" rel="stylesheet" type="text/css" media="all"/>
+</th:block>
+
+
+<!-- Headline -->
+<h1 th:fragment="headline">Welcome to Freddy´s BBQ Joint<span class="right fas fa-bacon"></span></h1>
+
+
+<!-- include JS-scripts at the bottom -->
+<th:block th:fragment="scripts">
+    <script th:src="@{https://kit.fontawesome.com/fb1e6c57aa.js}" crossorigin="anonymous"></script>
+</th:block>
+
+
+</body>
+</html>
