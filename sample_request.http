@@ -13,3 +13,8 @@ Content-Type: application/json
     "name": "Freddy",
     "secret": "Killed an elderly couple and did time."
 }
+
+{
+    "name": "Doug",
+    "secret": "Former Alcoholic."
+}

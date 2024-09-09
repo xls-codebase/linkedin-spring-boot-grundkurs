@@ -4,6 +4,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -11,9 +12,11 @@ import java.util.UUID;
 public class DirtySecretsRestController {
 
     private final DirtySecretsRepository repository;
+    private final DirtySecretsService dirtySecretsService;
 
-    public DirtySecretsRestController(DirtySecretsRepository repository) {
+    public DirtySecretsRestController(DirtySecretsRepository repository, DirtySecretsService dirtySecretsService) {
         this.repository = repository;
+        this.dirtySecretsService = dirtySecretsService;
     }
 
     @GetMapping
@@ -31,5 +34,10 @@ public class DirtySecretsRestController {
     public DirtySecret post(@RequestBody DirtySecret secret) {
         var savedSecret = this.repository.save(secret);
         return savedSecret;
+    }
+
+    @DeleteMapping
+    public void delete(@RequestBody List<UUID> secretIds) {
+        dirtySecretsService.deleteAll(secretIds);
     }
 }
